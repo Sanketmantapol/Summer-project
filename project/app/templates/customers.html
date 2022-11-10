@@ -1,0 +1,46 @@
+{% extends 'adminbase.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row my-4">
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-12">
+            <table class="table ">
+                <thead class="bg-dark">
+                    <tr class="text-white">
+                                  <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">Address</th>
+                                                
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for customer in customers %}
+                    {% if customer.is_superuser %}
+                    {% elif customer.is_authenticated %}
+                    <tr>
+                            
+                        <td>{{ customer.username }}</td>
+                        <td>{{ customer.email }}</td>
+                        <td>{{ customer.profile.phone }}</td>
+                        <td>{{ customer.profile.address}}</td>
+                     
+                        <!-- <td><a href="">Generate Bill</a></td> -->
+                    </tr>
+                    {% endif %}
+                  </tbody>
+                  {% endfor %}
+            </table>
+            
+        </div>
+    </div>
+
+</div>
+
+
+
+{% endblock %}

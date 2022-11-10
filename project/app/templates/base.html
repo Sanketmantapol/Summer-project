@@ -1,0 +1,52 @@
+{% load static %}
+<html>
+    <head>
+        <title>
+            Home </title>
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+        
+    </head>
+    <body><nav class="navbar navbar-dark bg-dark" aria-label="First navbar example">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/index">D.M.STORE.com</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <div class="collapse navbar-collapse" id="navbarsExample01">
+            <ul class="navbar-nav me-auto mb-2">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/index">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="/signin">login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/signup">My Account</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/Aboutus">About us</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="/contactus">Contact us</a>
+              </li>
+             
+              
+            </ul>
+            
+          </div>
+        
+         
+        </div>
+      </nav>
+    
+      
+          {% block content %}
+          {% endblock %}
+          <script src="{%static 'js/jquery-1.11.2.min.js' %}"></script>
+          <script src="{%static 'js/bootstrap.min.js' %}"></script>
+       </body>
+  </html>
+                        
+                   

@@ -1,0 +1,44 @@
+{% load static %}
+<html>
+    <head>
+        <title>
+            Home </title>
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+        
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                {%  if request.user.is_superuser %}
+                <a class="navbar-brand" href="/admindashboard"> Back</a>
+                {% else %}
+                <a class="navbar-brand" href="/customerdashboard"> Back</a>
+                {% endif %}
+                           <!-- <a class="navbar-brand" href=""> Cart</a> -->
+
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav mx-auto">
+                       
+                     </ul>   
+                    
+                      <!-- Left links -->
+            
+                      {% if request.user.is_authenticated %}
+                      <button type="button" class="btn btn-dark p-2">
+                        
+                     
+                       <a href="/signout" class = "text-white">logout</a></button> &nbsp;
+                      {% endif %}
+                        
+                      </div>
+                    </div>
+      
+            </div>
+        </nav>
+
+        {% block content %}
+        {% endblock %}
+        <script src="{%static 'js/jquery-1.11.2.min.js' %}"></script>
+        <script src="{%static 'js/bootstrap.min.js' %}"></script>
+    </body>
+</html>
